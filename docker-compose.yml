@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8889:8080
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./servers-list.php:/var/www/html/plugins/servers-list.php
+      - ./servers.php:/var/www/html/servers.php
+      - ./index.php:/var/www/html/index.php
+    environment:
+      - ADMINER_DESIGN=lucas-sandery
