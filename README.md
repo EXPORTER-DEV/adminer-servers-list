@@ -1,0 +1,1 @@
+# adminer-servers-list
